@@ -3,11 +3,13 @@ const mongoose = require("mongoose");
 const {politicsModels, romanceModels, postModels, careerModels, educationModels, entertainmentModels, lifestyleModels} = require("./schema");
 const cors = require("cors");
 
+// const url = "mongodb://localhost:27017/"
+
 const url = `mongodb+srv://Richietron:74267426%40Okon@richietron-7426.0pgvw.mongodb.net/`
 const app = express();
 
 
-
+app.use(express.static("build"))
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,10 +28,15 @@ mongoose.connect(url)
 
 
 
-app.get('/', (req, res) => {
-        res.send("<h1>hello people, this is from server.js, which is the backend</h1>");
-        });
 
+    
+try {
+    app.get('/', (req, res) => {
+        res.sendFile('./build/static/index.html');
+        })
+} catch (error) {
+    console.log(err)
+}
 
 
 
@@ -55,7 +62,7 @@ app.get("/politicsPage", (req, res) => {
 
 
     
-app.post("/messagePage", (req, res) => {
+app.post("/politicsPage", (req, res) => {
     const { data } = req.body; 
 
     politicsModels.create({ data: data }) 
@@ -244,7 +251,7 @@ app.post("/entertainmentPage", (req, res) => {
 
 
 
-app.get("/lifestyle", (req, res) => {
+app.get("/lifestylePage", (req, res) => {
     lifestyleModels.find()
     .then(result => res.json(result))
     .catch(err => {
@@ -254,7 +261,7 @@ app.get("/lifestyle", (req, res) => {
        });
     
 
-app.post("/lifestyle", (req, res) => {
+app.post("/lifestylePage", (req, res) => {
     const { data } = req.body;  
 
     lifestyleModels.create({ data: data }) 

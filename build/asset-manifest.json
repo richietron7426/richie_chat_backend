@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d214e1bc.css",
+    "main.js": "/static/js/main.be56f3d5.js",
+    "static/media/richietronlogo.jpg": "/static/media/richietronlogo.e5f74d81ef6e2f61660a.jpg",
+    "static/media/splinter.jpg": "/static/media/splinter.4e9e2e5b7cc91905c531.jpg",
+    "static/media/richiechatlogo.jpg": "/static/media/richiechatlogo.69f5aa7b733fa977c453.jpg",
+    "index.html": "/index.html",
+    "main.d214e1bc.css.map": "/static/css/main.d214e1bc.css.map",
+    "main.be56f3d5.js.map": "/static/js/main.be56f3d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d214e1bc.css",
+    "static/js/main.be56f3d5.js"
+  ]
+}
